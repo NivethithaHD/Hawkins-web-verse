@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hawkins Incident Command Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Hawkins Incident Command Console</h1>
+  <div class="controls">
+    <select id="filterThreat">
+      <option value="all">All Threat Levels</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+      <option value="Critical">Critical</option>
+    </select>
+
+        <select id="filterStatus">
+      <option value="all">All Status</option>
+      <option value="Open">Open</option>
+      <option value="Investigating">Investigating</option>
+      <option value="Resolved">Resolved</option>
+    </select>
+
+    <button id="sortBtn">Sort by Latest</button>   
+     <button id="toggleUpside">Toggle Upside Down (U)</button>
+     </div>
+</header>
+
+<main>
+  <!-- Incident List -->
+  <section class="incident-list" id="incidentList"></section>
+ <!-- Incident Details -->
+  <section class="incident-details" id="incidentDetails">
+    <h2>Incident Details</h2>
+    <p>Select an incident to view details.</p>
+  </section>
+</main>
+<!-- New Incident Form -->
+<section class="new-incident">
+  <h2>Log New Incident</h2>
+  <form id="incidentForm">
+    <input type="text" placeholder="Title" id="title" required />
+    <input type="text" placeholder="Location" id="location" required />
+
+    <select id="threat" required>
+      <option value="">Threat Level</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+      <option value="Critical">Critical</option>
+    </select>
+ <select id="status" required>
+      <option value="">Status</option>
+      <option value="Open">Open</option>
+      <option value="Investigating">Investigating</option>
+      <option value="Resolved">Resolved</option>
+    </select>
+
+      <textarea placeholder="Description" id="description" required></textarea>
+    <button type="submit">Add Incident</button>
+  </form>
+
+  <p id="confirmation" class="hidden">✔ Incident Logged Successfully</p>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
+
